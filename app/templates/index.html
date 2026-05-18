@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+
+<title>AI Prediksi Harga Mobil </title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins;
+}
+
+body{
+
+background:
+
+linear-gradient(
+rgba(0,0,0,.7),
+rgba(0,0,0,.7)
+),
+
+url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7");
+
+background-size:cover;
+background-position:center;
+
+min-height:100vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
+padding:30px;
+}
+
+
+.container{
+
+width:1200px;
+
+background:
+rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+border-radius:35px;
+
+display:flex;
+
+overflow:hidden;
+
+box-shadow:
+0 20px 60px rgba(0,0,0,.5);
+
+}
+
+
+.left{
+
+width:45%;
+
+padding:30px;
+
+background:
+rgba(0,0,0,.2);
+
+color:white;
+}
+
+
+.left h1{
+
+font-size:42px;
+margin-bottom:15px;
+}
+
+.left p{
+
+opacity:.8;
+margin-bottom:25px;
+}
+
+
+.gallery{
+
+display:grid;
+
+grid-template-columns:
+1fr 1fr;
+
+gap:12px;
+
+}
+
+
+.gallery img{
+
+width:100%;
+height:180px;
+
+object-fit:cover;
+
+border-radius:18px;
+
+transition:.3s;
+}
+
+.gallery img:hover{
+
+transform:scale(1.03);
+
+}
+
+
+.right{
+
+width:55%;
+
+background:white;
+
+padding:40px;
+
+overflow-y:auto;
+}
+
+
+.right h2{
+
+text-align:center;
+
+margin-bottom:20px;
+
+color:#1e40af;
+}
+
+
+input{
+
+width:100%;
+
+padding:14px;
+
+margin:8px 0;
+
+border-radius:12px;
+
+border:1px solid #ddd;
+}
+
+
+button{
+
+width:100%;
+
+padding:16px;
+
+border:none;
+
+border-radius:14px;
+
+font-size:18px;
+
+background:
+linear-gradient(
+90deg,
+#2563eb,
+#06b6d4
+);
+
+color:white;
+
+cursor:pointer;
+
+margin-top:10px;
+}
+
+
+button:hover{
+
+transform:scale(1.02);
+}
+
+
+.result{
+
+margin-top:20px;
+
+padding:18px;
+
+border-radius:14px;
+
+background:#eff6ff;
+
+font-size:22px;
+
+text-align:center;
+
+font-weight:bold;
+
+color:#2563eb;
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<div class="left">
+
+<h1>
+🚘 AI Prediksi Harga Mobil
+</h1>
+
+<p>
+
+Prediksi harga mobil bekas menggunakan Machine Learning.
+
+• ANN • LSTM • Regression
+
+</p>
+
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d">
+
+<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70">
+
+<img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888">
+
+<img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8">
+
+</div>
+
+</div>
+
+
+
+<div class="right">
+
+<h2>
+
+Input Data Mobil (Berdasarkan: dataset India)
+
+</h2>
+
+
+<form method="POST">
+
+<input
+name="umur"
+placeholder="Umur Mobil">
+
+<input
+name="km"
+placeholder="KM Tempuh">
+
+<select name="fuel">
+
+<option value="0">
+Bensin
+</option>
+
+<option value="1">
+Diesel
+</option>
+
+<option value="2">
+Listrik
+</option>
+
+</select>
+
+
+<select name="transmisi">
+
+<option value="0">
+Manual
+</option>
+
+<option value="1">
+Automatic
+</option>
+
+</select>
+
+
+<input
+name="engine"
+placeholder="CC Mesin">
+
+
+<input
+name="power"
+placeholder="Max Power">
+
+
+<input
+name="seats"
+placeholder="Jumlah Kursi">
+
+
+<button>
+
+Prediksi Harga
+
+</button>
+
+</form>
+
+
+<div class="result">
+
+{{ hasil }}
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
